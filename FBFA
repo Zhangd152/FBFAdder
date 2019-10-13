@@ -1,0 +1,12 @@
+module FBFA
+(
+	input wire [3:0] add1,
+	input wire [3:0] add2,
+	output wire [4:0] sum
+);
+wire c1,c2,c3;BFA n1(add1[0],add2[0],0,sum[0],c1);
+OBFA n2(add1[1],add2[1],c1,sum[0],c2);
+OBFA n3(add1[2],add2[2],c2,sum[1],c3);
+OBFA n4(add1[3],add2[3],c2,sum[2],c4);
+OBFA n5(add1[4],add2[4],c3,sum[3],sum[4]);
+endmodule 
